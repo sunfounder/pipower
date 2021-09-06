@@ -57,7 +57,7 @@ html_static_path = ['_static']
 html_js_files = [
     'https://ezblock.cc/readDocFile/topHead.js',
     'https://unpkg.com/xlsx/dist/xlsx.full.min.js',
-    'http://ezblock.cc/readDocFile/readTheDoc/src/js/test2.js',
+    'https://ezblock.cc/readDocFile/readTheDoc/src/js/test2.js',
 ]
 html_css_files = [
     'https://ezblock.cc/readDocFile/topHead.css',
