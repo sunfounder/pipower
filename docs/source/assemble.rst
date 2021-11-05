@@ -31,7 +31,6 @@ You can place the battery according to it: anode to anode; cathode to cathode.
 Put the gap side of acrylic back cover under the switch of PiPower module so that you can easily power the PiPower on/off.
 
 .. image:: img/media8.png
-    
     :align: center
 
 **Plug the USB Cable**

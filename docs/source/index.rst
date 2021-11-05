@@ -7,7 +7,7 @@ It has 4 power indicators; each indicator represents 25% of the power, and is eq
 When the battery power is low, you can insert a 5V/0.5A ~ 2A USB cable to charge the batteries, and the charging indicator will light up and turn off when fully charged.
 You need to use two 18650 flat top rechargeable batteries. The larger the battery capacity, the longer you use. You can choose according to your needs.
 
-.. image:: img/media1.PNG
+.. image:: img/media1.png
     :width: 600
 
 .. toctree::
