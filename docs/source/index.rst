@@ -1,20 +1,22 @@
-.. pipower documentation master file, created by
-   sphinx-quickstart on Mon Dec 13 15:49:12 2021.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+PiPower
+==========
 
-Welcome to pipower's documentation!
-===================================
+A Power Supply Module for Raspberry Pi
+---------------------------------------
+
+.. image:: img/media1.png
+
+1. Pass through Charging
+2. Output: 5V/3A
+3. Input: 5V/0.5A-2A
+4. Power Switch
+5. Battery Indicators
+6. Dimension: 90mm x 56mm x 24mm
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
 
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+   introduction
+   components
+   building_the_pipower
+   
