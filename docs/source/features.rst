@@ -52,7 +52,7 @@ Downloads
 
 .. image:: img/dimension.png
 
-* `Datasheet <https://github.com/sunfounder/sf-pdf/raw/master/schematic/pipower.pdf>`_ of the main components on PiPower
-* `Schematic <https://github.com/sunfounder/sf-pdf/tree/master/datasheet/pipower>`_
+* `Datasheet <https://github.com/sunfounder/sf-pdf/tree/master/datasheet/pipower>`_ of the main components on PiPower
+* `Schematic <https://github.com/sunfounder/sf-pdf/raw/master/schematic/pipower.pdf>`_
 * `3D Model(.step) <https://github.com/sunfounder/sf-pdf/raw/master/3d_model/pipower.step>`_
 
