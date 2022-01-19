@@ -3,7 +3,7 @@ Features
 
 * Pass through Charging
 * Output: USB Type-A, 5V/3A
-* Input: USB Type-C, 5V/0.5A-2A
+* Input: USB Type-C, 5V/2A
 * Power Switch
 * 1 Charge Indicator
 * 4 Battery Indicators

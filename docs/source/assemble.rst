@@ -35,7 +35,7 @@ Put the gap side of acrylic back cover under the switch of PiPower module so tha
 
 **Plug the USB Cable**
 
-.. image:: img/media9.png
+.. image:: img/media9.JPG
     :align: center
 
 When the battery is about to be run out, you can charge the battery through the Type-C USB port of the PiPower module.
