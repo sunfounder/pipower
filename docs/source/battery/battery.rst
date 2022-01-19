@@ -16,6 +16,9 @@ About the Battery
   * Pay attention to the poles of the battery, and DO NOT connect to the positive and negative poles inversely.
   * Do not use batteries that are damaged in appearance.
 
+**Duration of Use**
+
+.. image:: media/duration.png
 
 
 **Button Top vs Flat Top?**
