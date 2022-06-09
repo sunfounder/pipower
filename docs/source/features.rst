@@ -20,7 +20,7 @@ Features
 
 When the single battery voltage is below 3.2V, the battery protection activates and the battery is no longer discharged.
 
-When the battery is unplugged, due to the mechanism of the on-board over-discharge protection circuit, the voltage will be considered too low, thus activating the protection circuit; when you replug the battery into the PiPower, the battery will not work properly, at this time, you need to plug the Tyep C cable into the charging port to turn off the protection circuit, and the battery can be used normally.
+When the battery is unplugged, due to the mechanism of the on-board over-discharge protection circuit, the voltage will be considered too low, thus activating the protection circuit; when you replug the battery into the PiPower, the battery will not work properly, at this time, you need to plug the Type C cable into the charging port to turn off the protection circuit, and the battery can be used normally.
 
 **Overcharge Protection**
 

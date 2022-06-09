@@ -43,3 +43,5 @@ When the battery is about to be run out, you can charge the battery through the 
 .. image:: img/media10.png
     :align: center
 
+.. warning::
+    When you put the battery in for the first time or when the battery is unplugged and put in again, the battery will not work properly, at this time, you need to plug the Type C cable into the charging port to turn off the protection circuit, and the battery can be used normally.
