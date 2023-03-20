@@ -1,37 +1,23 @@
-SunFounder PiPower Module
-=================================
+PiPower - Raspberry Pi UPS with Battery
+=============================================
 
 .. image:: img/media1.png
     :width: 600
 
-* Pass Through Charging
-* Shutdown Current：< 0.5mA
-* Input:
-    * USB Type-C, 5V/3A
-    * Battery Input
-* Output：
-    * USB Type-A, 5V/3A
-    * 2x4P P2.54 pin headers
+**What a UPS Does?**
 
-* Charging Power：7.4V/1A 7.4W
-* Equipped Battery
-    * Type: 3.7V Lithium-ion batteries x 2
-    * Capacity: 2000mAh
-    * Connector: PH2.0, 5P
-* Over Discharge Protection Voltage：3.2V
-* Overcharge Protection Voltage：4.2V
-* Dimension: 90mm x 60mm x 24.9mm
-* On-board Indicators
-    * 1 x Charging Indicator (CHG)
-    * 1 x Power Indicator (PWR)
-    * 4 Battery Indicators (D4 ~ D7)
+If your Raspberry Pi project requires constant power, relying only on the main power system is not a viable option. Depending on your location, power drops and surges may occur frequently and often last for hours. Any power fluctuations can damage your Raspberry Pi, and a power outage will immediately shut it down. Consequently, it will not shut down safely, which can result in all data on the SD card being lost, increasing the chances of it being destroyed.
 
+Therefore, the use of an uninterruptible power supply (UPS) is recommended.
 
-PiPower is a power supply module for Raspberry Pi with recharging function. 
-It can output 5V/3A power supply to meet various Raspberry Pi usage situation. 
+With a UPS, if there is a power interruption from the mains (interruption = power outage), the battery or other power source will take over and continue to power the device without shutting it down. A UPS is often considered an emergency power source. After the main power source is repaired, the UPS will recharge and be ready to handle the next disaster.
+
+**About PiPower**
+
+That's why we designed PiPower in the first place. PiPower can be used as a second power source for the Raspberry Pi. A USB-C mains power supply plugged into the PiPower will directly power the Raspberry Pi and charge the battery at low current. PiPower can seamlessly power up a Raspberry Pi in the event of a power outage or disconnection of USB-C mains power.
+
+PiPower can output 5V/3A power supply to meet various Raspberry Pi usage situation. 
 It has 4 power indicators; each indicator represents 25% of the power, and is equipped with a power switch to turn on/off the power of the Raspberry Pi without plugging or unplugging the power cord.
-
-When the battery power is low, you can insert a 5V/3A Type-C cable to charge the batteries, and the charging indicator will light up and turn off when fully charged.
 
 .. warning::
     When you put the battery in for the first time or when the battery is unplugged and put in again, the battery will not work properly, at this time, you need to plug the Type C cable into the charging port to turn off the protection circuit, and the battery can be used normally.
