@@ -77,6 +77,20 @@ The relationship between the battery indicators and voltage is as follows:
 * 4 LEDs all off: voltage <6.6V，at this time，batteries need to be charged.
 
 
+External Battery
+--------------------------
+
+
+.. image:: img/ex_btra.png
+
+You can connect your own battery using the Screw Terminal. 
+The device only supports two 3.7V lithium-ion or lithium-polymer batteries. 
+It's preferable for the batteries to 
+have a protection board and ensure an output of more than 15W.
+
+.. warning:: Do not connect the external battery and the included battery at the same time!
+
+.. image:: img/ex_btr.png
 
 About IO Pins
 -----------------
