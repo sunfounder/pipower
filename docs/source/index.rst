@@ -29,4 +29,5 @@ It has 4 power indicators; each indicator represents 25% of the power, and is eq
     components
     assemble
     features
+    safe_shutdown
     faq
