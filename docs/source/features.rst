@@ -77,6 +77,7 @@ The relationship between the battery indicators and voltage is as follows:
 * 4 LEDs all off: voltage <6.6V，at this time，batteries need to be charged.
 
 
+
 External Battery
 --------------------------
 
@@ -84,13 +85,17 @@ External Battery
 .. image:: img/ex_btra.png
 
 You can connect your own battery using the Screw Terminal. 
-The device only supports two 3.7V lithium-ion or lithium-polymer batteries. 
-It's preferable for the batteries to 
-have a protection board and ensure an output of more than 15W.
 
 .. warning:: Do not connect the external battery and the included battery at the same time!
 
+The external battery only supports two 3.7V lithium batteries connected in series. The interface has three pins: "+", "M", and "-". They should be connected to the battery's positive terminal, the middle of the two batteries, and the battery's negative terminal, respectively.
+
+The PiPower board has an onboard battery protection circuit, offering over-discharge, overcharge, and overcurrent protection. Therefore, it's recommended not to use batteries with their own protection boards.
+
+The 'M' interface primarily serves the board's protection circuit for single-cell battery protection and balanced charging currents during charging. If you don't require protection and balanced charging features, you can omit connecting to the 'M' interface.
+
 .. image:: img/ex_btr.png
+
 
 About IO Pins
 -----------------
