@@ -1,45 +1,42 @@
-Assemble the PiPower
-=======================
+Zusammenbau des PiPower
+=========================
 
-After getting familiar with the components in the 
-package, we start to assemble PiPower.
+Nachdem Sie sich mit den Komponenten des Pakets vertraut gemacht haben, beginnen wir mit dem Zusammenbau des PiPower.
 
-In the next steps, there are a lot of details you need to 
-notice, especially the assembly position of the battery 
-and the clear acrylic back cover.
+In den folgenden Schritten gibt es viele Details, auf die Sie achten müssen, insbesondere auf die Einbauposition des Akkus und die klare Acryl-Rückabdeckung.
 
-#. Attach the Adhesive Tape to the back.
+#. Kleben Sie das Klebeband auf die Rückseite.
 
     .. image:: img/assemble1.png
 
-#. Then stick the battery on and plug it in.
+#. Dann kleben Sie den Akku darauf und stecken ihn ein.
 
     .. image:: img/assemble2.png
 
-#. Bind the battery wires with a cable tie.
+#. Befestigen Sie die Akkukabel mit einem Kabelbinder.
 
     .. image:: img/assemble3.png
 
-#. Now screw in four sets of standoffs.
+#. Schrauben Sie nun vier Standoff-Sets ein.
 
     .. image:: img/assemble4.png
 
-#. Mount the Raspberry Pi on top.
+#. Montieren Sie den Raspberry Pi oben drauf.
 
     .. image:: img/assemble5.png
 
-#. Secure a protective plate at the bottom.
+#. Befestigen Sie eine Schutzplatte am Boden.
 
     .. image:: img/assemble6.png
 
-#. Plug in the USB-C cable to power the Raspberry Pi.
+#. Stecken Sie das USB-C-Kabel ein, um den Raspberry Pi mit Strom zu versorgen.
 
     .. image:: img/assemble7.png
 
-#. PiPower needs to be activated with the USB-C cable at the charge port the first time you use it or re-plug the battery
-
+#. Das PiPower muss bei der ersten Benutzung oder beim erneuten Einstecken des Akkus mit dem USB-C-Kabel am Ladeanschluss aktiviert werden.
 
     .. image:: img/assemble8.png
 
     .. warning::
-        When you put the battery in for the first time or when the battery is unplugged and put in again, the battery will not work properly, at this time, you need to plug the Type C cable into the charging port to turn off the protection circuit, and the battery can be used normally.
+        Wenn Sie den Akku zum ersten Mal einlegen oder wenn er entfernt und erneut eingesetzt wird, funktioniert der Akku nicht ordnungsgemäß. In diesem Fall müssen Sie das Typ-C-Kabel in den Ladeanschluss stecken, um den Schutzschaltkreis zu deaktivieren, und der Akku kann dann normal verwendet werden.
+

@@ -1,26 +1,27 @@
-PiPower - Raspberry Pi UPS with Battery
+PiPower - Raspberry Pi USV mit Batterie
 =============================================
 
 .. image:: img/media1.png
     :width: 600
 
-**What a UPS Does?**
+**Was macht eine USV?**
 
-If your Raspberry Pi project requires constant power, relying only on the main power system is not a viable option. Depending on your location, power drops and surges may occur frequently and often last for hours. Any power fluctuations can damage your Raspberry Pi, and a power outage will immediately shut it down. Consequently, it will not shut down safely, which can result in all data on the SD card being lost, increasing the chances of it being destroyed.
+Wenn Ihr Raspberry Pi-Projekt eine konstante Stromversorgung benötigt, ist das alleinige Verlassen auf das Hauptstromsystem keine tragfähige Lösung. Je nach Standort können Stromausfälle und -spitzen häufig auftreten und oft mehrere Stunden andauern. Jede Stromschwankung kann Ihren Raspberry Pi beschädigen und ein Stromausfall wird ihn sofort herunterfahren. Dies führt dazu, dass er nicht sicher heruntergefahren wird, was den Verlust aller Daten auf der SD-Karte zur Folge haben kann und die Wahrscheinlichkeit erhöht, dass sie zerstört wird.
 
-Therefore, the use of an uninterruptible power supply (UPS) is recommended.
+Daher wird die Verwendung einer unterbrechungsfreien Stromversorgung (USV) empfohlen.
 
-With a UPS, if there is a power interruption from the mains (interruption = power outage), the battery or other power source will take over and continue to power the device without shutting it down. A UPS is often considered an emergency power source. After the main power source is repaired, the UPS will recharge and be ready to handle the next disaster.
+Mit einer USV, wenn es zu einem Stromausfall aus dem Netz kommt, übernimmt die Batterie oder eine andere Stromquelle und versorgt das Gerät weiterhin ohne es herunterzufahren. Eine USV wird oft als Notstromquelle betrachtet. Nach der Reparatur der Hauptstromquelle wird die USV wieder aufgeladen und ist bereit, den nächsten Ausfall zu bewältigen.
 
-**About PiPower**
+**Über PiPower**
 
-That's why we designed PiPower in the first place. PiPower can be used as a second power source for the Raspberry Pi. A USB-C mains power supply plugged into the PiPower will directly power the Raspberry Pi and charge the battery at low current. PiPower can seamlessly power up a Raspberry Pi in the event of a power outage or disconnection of USB-C mains power.
+Genau aus diesem Grund haben wir PiPower entwickelt. PiPower kann als zweite Stromquelle für den Raspberry Pi verwendet werden. Ein USB-C-Netzteil, das an den PiPower angeschlossen ist, versorgt den Raspberry Pi direkt und lädt die Batterie mit geringem Strom auf. PiPower kann einen Raspberry Pi bei einem Stromausfall oder beim Trennen des USB-C-Netzstroms nahtlos mit Strom versorgen.
 
-PiPower can output 5V/3A power supply to meet various Raspberry Pi usage situation. 
-It has 4 power indicators; each indicator represents 25% of the power, and is equipped with a power switch to turn on/off the power of the Raspberry Pi without plugging or unplugging the power cord.
+PiPower bietet eine 5V/3A Stromversorgung, um verschiedenen Einsatzszenarien des Raspberry Pi gerecht zu werden.
+Es verfügt über 4 Ladeanzeigen; jede Anzeige steht für 25% der Energie und ist mit einem Ein-/Ausschalter ausgestattet, um den Raspberry Pi ein- oder auszuschalten, ohne das Netzkabel zu stecken oder zu ziehen.
 
 .. warning::
-    When you put the battery in for the first time or when the battery is unplugged and put in again, the battery will not work properly, at this time, you need to plug the Type C cable into the charging port to turn off the protection circuit, and the battery can be used normally.
+    Wenn Sie den Akku zum ersten Mal einsetzen oder wenn er entfernt und erneut eingesetzt wird, funktioniert der Akku nicht ordnungsgemäß. In diesem Fall müssen Sie das Typ-C-Kabel in den Ladeanschluss stecken, um den Schutzschaltkreis auszuschalten, und der Akku kann normal verwendet werden.
+
 
 
 

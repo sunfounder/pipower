@@ -1,132 +1,125 @@
-Features
+Eigenschaften
 ===============
 
 .. image:: img/media2.png
 
-* Pass Through Charging
-* Shutdown Current：< 0.5mA
-* Input:
-    * USB Type-C, 5V/3A
-    * Battery Input
-* Output：
-    * USB Type-A, 5V/3A
-    * 2x4P P2.54 pin headers
+* Durchgangsladung
+* Abschaltstrom: < 0,5mA
+* Eingang:
+    * USB Typ-C, 5V/3A
+    * Batterieeingang
+* Ausgang:
+    * USB Typ-A, 5V/3A
+    * 2x4P P2.54 Pin-Header
 
-* Charging Power：7.4V/1A 7.4W
-* Equipped Battery
-    * Type: 3.7V Lithium-ion batteries x 2
-    * Capacity: 2000mAh
-    * Connector: PH2.0, 5P
-* Over Discharge Protection Voltage：3.2V
-* Overcharge Protection Voltage：4.2V
-* Dimension: 90mm x 60mm x 24.9mm
-* On-board Indicators
-    * 1 x Charging Indicator (CHG)
-    * 1 x Power Indicator (PWR)
-    * 4 Battery Indicators (D4 ~ D7)
+* Ladeleistung: 7,4V/1A 7,4W
+* Integrierter Akku
+    * Typ: 3,7V Lithium-Ionen-Batterien x 2
+    * Kapazität: 2000mAh
+    * Anschluss: PH2.0, 5P
+* Unterspannungsschutz: 3,2V
+* Überladeschutz: 4,2V
+* Abmessungen: 90mm x 60mm x 24,9mm
+* Anzeigen auf der Platine
+    * 1 x Ladeanzeige (CHG)
+    * 1 x Betriebsanzeige (PWR)
+    * 4 Batterieanzeigen (D4 ~ D7)
 
-
-
-About Charge and Discharge
+Laden und Entladen
 ------------------------------------
 
-**Switch Power Path**
+**Strompfadwechsel**
 
-PiPower V2 has the function of integrated power, which can automatically switch the power path to reduce battery consumption.
+Das PiPower V2 verfügt über eine integrierte Stromversorgungsfunktion, die automatisch den Strompfad umschaltet, um den Batterieverbrauch zu minimieren.
 
-* If an external power supply is connected, the 5V output is directly output from the external power supply, and the power switch can be used to turn it on or off. Additionally, the external power supply can charge the battery at low current.
-* When the external power supply is unplugged, PiPower switches to battery step-down power supply, seamless switching to protect the device.
+* Bei angeschlossenem externen Netzteil wird die 5V-Ausgabe direkt vom Netzteil bereitgestellt. Dabei lässt sich der Strompfad über den Schalter aktivieren oder deaktivieren. Zusätzlich kann das Netzteil den Akku bei geringem Strombedarf aufladen.
+* Wird das externe Netzteil entfernt, schaltet PiPower nahtlos auf die Akku-Stromversorgung um, um das Gerät zu schützen.
 
+**Ladeleistung**
 
-**Charging Power**
+Je nach Stellung des Stromschalters wird die Ladeleistung angepasst.
 
-Charging current will be switched according to the state of the power switch.
+* Ist der Stromschalter aus, versorgt PiPower keine externen Geräte mit Energie. In diesem Zustand beträgt die Ladeleistung 7W, und es dauert etwa 2 Stunden, um von 0% auf 100% zu laden.
+* Bei aktiviertem Stromschalter wird das angeschlossene Gerät direkt vom externen Netzteil versorgt. Die Ladeleistung wird dann auf unter 1W reduziert, um die Stromversorgung sicherzustellen.
 
-* PiPower does not provide power to external devices when the power switch is off. This time, the charging power is 7W, and it takes about 2 hours to charge from 0% to 100%.
-* External power supply will power the connected device directly when the power switch is on. Charging power is reduced to less than 1W to ensure power supply current.
+**Unterspannungsschutz**
 
-**Over-discharge Protection**
+Fällt die Spannung einer Einzelbatterie unter 3,2V, wird der Batterieschutz aktiviert und die Entladung der Batterie gestoppt.
 
-When the single battery voltage is below 3.2V, the battery protection activates and the battery is no longer discharged.
+Sollte die Batterie entfernt werden, aktiviert der an Bord befindliche Unterspannungsschutz, da die Spannung als zu niedrig erachtet wird. Nach dem Wiederanschluss der Batterie muss das Typ-C-Kabel in die Ladebuchse eingesteckt werden, um den Schutzmechanismus zu deaktivieren. Anschließend ist der Akku wieder normal nutzbar.
 
-When the battery is unplugged, due to the mechanism of the on-board over-discharge protection circuit, the voltage will be considered too low, thus activating the protection circuit; when you replug the battery into the PiPower, the battery will not work properly, at this time, you need to plug the Type C cable into the charging port to turn off the protection circuit, and the battery can be used normally.
+**Überladeschutz**
 
-**Overcharge Protection**
+Der Ladevorgang endet, sobald die Gesamtspannung der Batterie 8,4V erreicht.
 
-Charging ends when the total battery voltage reaches 8.4V.
+**Ladeausgleich**
 
-**Charge Balance**
+Übersteigt die Spannung eines einzelnen Akkus 4,2V, tritt der Spannungsteiler in Aktion und der Ladestrom der Batterie wird reduziert oder sogar unterbrochen.
 
-When a single battery exceeds 4.2V, the voltage divider resistor channel conducts and the battery charging current is reduced or even discharged. 
+**Temperatur**
 
-**Temperature**
-
-When the output power reaches the maximum nominal 5V/3A, the temperature of DC-DC buck chip U1 will rise to about 70-80 degrees Celsius, so be careful not to touch it to prevent burns and keep ventilation. When the temperature reaches the DC-DC protection temperature of 75 degrees Celsius, the DC-DC will shut down to prevent overheating damage.
-
+Bei Erreichen der maximalen Ausgangsleistung von 5V/3A steigt die Temperatur des DC-DC-Buck-Chips U1 auf etwa 70-80 Grad Celsius. Vorsicht beim Berühren, um Verbrennungen zu vermeiden. Sollte die Temperatur den DC-DC-Schutzwert von 75 Grad Celsius erreichen, wird der DC-DC-Converter abgeschaltet, um Überhitzung zu vermeiden.
 
 
-Battery Indicators
+
+
+Batterieanzeigen
 --------------------------
 
-The relationship between the battery indicators and voltage is as follows:
+Die Beziehung zwischen den Batterieanzeigen und der Spannung ist wie folgt:
 
-* 4 LEDs all on: voltage > 7.8V
-* 3 LEDs on: voltage > 7.36V
-* 2 LEDs on: voltage >6.96V
-* 1 LED on: voltage > 6.6V
-* 4 LEDs all off: voltage <6.6V，at this time，batteries need to be charged.
+* 4 LEDs alle an: Spannung > 7,8V
+* 3 LEDs an: Spannung > 7,36V
+* 2 LEDs an: Spannung >6,96V
+* 1 LED an: Spannung > 6,6V
+* 4 LEDs alle aus: Spannung <6,6V – in diesem Zustand sollten die Batterien geladen werden.
 
-
-
-External Battery
+Externe Batterie
 --------------------------
-
 
 .. image:: img/ex_btra.png
 
-You can connect your own battery using the Screw Terminal. 
+Sie können Ihre eigene Batterie über den Schraubanschluss anschließen.
 
-.. warning:: Do not connect the external battery and the included battery at the same time!
+.. warning:: Schließen Sie nicht gleichzeitig die externe Batterie und die im Lieferumfang enthaltene Batterie an!
 
-The external battery only supports two 3.7V lithium batteries connected in series. The interface has three pins: "+", "M", and "-". They should be connected to the battery's positive terminal, the middle of the two batteries, and the battery's negative terminal, respectively.
+Die externe Batterie unterstützt nur zwei in Reihe geschaltete 3,7V Lithium-Batterien. Das Interface hat drei Pins: "+", "M" und "-". Diese sollten entsprechend mit dem positiven Anschluss der Batterie, der Mitte der beiden Batterien und dem negativen Anschluss der Batterie verbunden werden.
 
-The PiPower board has an onboard battery protection circuit, offering over-discharge, overcharge, and overcurrent protection. Therefore, it's recommended not to use batteries with their own protection boards.
+Das PiPower-Board verfügt über einen integrierten Batterieschutzschaltkreis, der Schutz vor Tiefentladung, Überladung und Überstrom bietet. Daher wird empfohlen, keine Batterien mit eigenen Schutzplatinen zu verwenden.
 
-The 'M' interface primarily serves the board's protection circuit for single-cell battery protection and balanced charging currents during charging. If you don't require protection and balanced charging features, you can omit connecting to the 'M' interface.
+Das 'M'-Interface dient hauptsächlich dem Schutzschaltkreis des Boards für den Schutz von Einzelzellen und ausbalancierten Ladevorgängen. Wenn Sie Schutz- und Ausgleichsladefunktionen nicht benötigen, können Sie den Anschluss an das 'M'-Interface weglassen.
 
 .. image:: img/ex_btr.png
 
-
-About IO Pins
+Über IO-Pins
 -----------------
 
 .. image:: img/io_pin.png
     :width: 500
     :align: center
 
-In order to meet the DIY needs of customers, multiple signal pins are provided on the PiPower, but they are not soldered by default.
+Um den DIY-Anforderungen der Kunden gerecht zu werden, sind auf dem PiPower mehrere Signaleingänge vorhanden, diese sind jedoch standardmäßig nicht gelötet.
 
-* **GND**: Ground input
-* **BT_LV**: Get the battery voltage pin. The voltage of this pin is equal to 1/3 of the battery voltage.
-* **IN_DT**: Input detect pin. Used to determine if there is USB power input, if so, this pin outputs high.
-* **CHG**: Charging status indication pin. This pin is high when charging.
-* **LO_DT**: Battery low voltage status pin. In normal state, this pin is low. When low battery voltage is detected, this pin is high.
-* **EN:** Switch signal pin. the EN pin can be connected to an external switch, put the pin to ground, the PiPower is off. The external switch can not use self-recovery button or key, etc. The EN pin is only effective when the on-board switch is turned on.
-* **GND**: Ground input
-* **LED**: Power indicator pin. Output 5V at power on, need to add current limiting resistor in the middle when connect an external LED.
-* **GND**: Ground input
+* **GND**: Erdungseingang
+* **BT_LV**: Pin zur Abfrage der Batteriespannung. Die Spannung dieses Pins entspricht 1/3 der Batteriespannung.
+* **IN_DT**: Eingangserkennungspin. Wird verwendet, um zu bestimmen, ob eine USB-Stromversorgung vorhanden ist. Ist dies der Fall, gibt dieser Pin ein Hochsignal aus.
+* **CHG**: Ladezustandsanzeigepin. Dieser Pin ist während des Ladevorgangs hoch.
+* **LO_DT**: Pin für niedrigen Batteriezustand. Im Normalzustand ist dieser Pin niedrig. Bei Erkennung einer niedrigen Batteriespannung wird dieser Pin hoch.
+* **EN**: Schaltersignaleingang. Der EN-Pin kann mit einem externen Schalter verbunden werden. Wird dieser Pin auf den Boden gelegt, ist das PiPower ausgeschaltet. Der externe Schalter darf kein selbstzurücksetzender Button oder Schlüssel sein. Der EN-Pin ist nur wirksam, wenn der integrierte Schalter eingeschaltet ist.
+* **GND**: Erdungseingang
+* **LED**: Anzeige für Stromversorgung. Gibt 5V bei eingeschaltetem Strom aus. Beim Anschluss einer externen LED muss ein Strombegrenzungswiderstand eingefügt werden.
+* **GND**: Erdungseingang
 
-About Battery
+Über die Batterie
 ----------------------
-
 
 .. image:: img/2battery.jpg
     :width: 300
     :align: center
 
-* **VCC**: Battery positive terminal, here there are two sets of VCC and GND is to increase the current and reduce the resistance.
-* **Middle**: To balance the voltage between the two cells and thus protect the battery.
-* **GND**: Negative battery terminal.
+* **VCC**: Positiver Batterieanschluss, hier gibt es zwei Sätze von VCC und GND, um den Strom zu erhöhen und den Widerstand zu verringern.
+* **Middle**: Um die Spannung zwischen den beiden Zellen auszugleichen und die Batterie zu schützen.
+* **GND**: Negativer Batterieanschluss.
 
+Dies ist ein kundenspezifisches Batteriepaket von SunFounder, bestehend aus zwei 3,7V 18650 Batterien mit einer Kapazität von 2200mAh. Der Anschluss ist PH2.0-5P, welcher direkt in das PiPower eingesteckt und geladen werden kann.
 
-This is a custom battery pack made by SunFounder consisting of two 3.7V 18650 batteries with a capacity of 2200mAh. The connector is PH2.0-5P, which can be charged directly after being inserted into the PiPower.

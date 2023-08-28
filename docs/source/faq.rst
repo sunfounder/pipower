@@ -1,13 +1,12 @@
 FAQ
 ==============
 
-PiPower not working?
+PiPower funktioniert nicht?
 ---------------------------
 
-When you put the battery in for the first time or when the battery is unplugged and put in again, the battery will not work properly.
+Wenn Sie die Batterie zum ersten Mal einlegen oder wenn die Batterie ausgesteckt und erneut eingesetzt wird, funktioniert sie möglicherweise nicht korrekt.
 
+Dies liegt daran, dass die Spannung nach dem Entfernen der Batterie aufgrund des Mechanismus der integrierten Überentladungsschutzschaltung als zu niedrig betrachtet wird, wodurch der Schutzschaltkreis aktiviert wird.
 
-This is because when the battery is removed, due to the mechanism of the on-board over-discharge protection circuit, the voltage will be considered too low, thus activating the protection circuit; 
+In diesem Fall müssen Sie das **Typ C** -Kabel in den Ladeanschluss stecken, um den Schutzschaltkreis zurückzusetzen, und dann kann die Batterie normal verwendet werden.
 
-
-At this time, you need to plug the **Type C** cable into the charging port to release the protection circuit, and the battery can be used normally.
