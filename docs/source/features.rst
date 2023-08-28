@@ -1,132 +1,125 @@
-Features
+機能一覧
 ===============
 
 .. image:: img/media2.png
 
-* Pass Through Charging
-* Shutdown Current：< 0.5mA
-* Input:
+* パススルー充電
+* 待機電流：< 0.5mA
+* 入力:
     * USB Type-C, 5V/3A
-    * Battery Input
-* Output：
+    * バッテリー入力
+* 出力：
     * USB Type-A, 5V/3A
-    * 2x4P P2.54 pin headers
+    * 2x4P P2.54ピンヘッダー
 
-* Charging Power：7.4V/1A 7.4W
-* Equipped Battery
-    * Type: 3.7V Lithium-ion batteries x 2
-    * Capacity: 2000mAh
-    * Connector: PH2.0, 5P
-* Over Discharge Protection Voltage：3.2V
-* Overcharge Protection Voltage：4.2V
-* Dimension: 90mm x 60mm x 24.9mm
-* On-board Indicators
-    * 1 x Charging Indicator (CHG)
-    * 1 x Power Indicator (PWR)
-    * 4 Battery Indicators (D4 ~ D7)
+* 充電電力：7.4V/1A 7.4W
+* 搭載バッテリー
+    * タイプ：3.7V リチウムイオンバッテリー x 2
+    * 容量：2000mAh
+    * コネクタ：PH2.0, 5P
+* 過放電保護電圧：3.2V
+* 過充電保護電圧：4.2V
+* 寸法：90mm x 60mm x 24.9mm
+* オンボードインジケーター
+    * 1 x 充電インジケーター (CHG)
+    * 1 x 電源インジケーター (PWR)
+    * 4 x バッテリーインジケーター (D4 ~ D7)
 
 
-
-About Charge and Discharge
+充電と放電について
 ------------------------------------
 
-**Switch Power Path**
+**電源パスの切り替え**
 
-PiPower V2 has the function of integrated power, which can automatically switch the power path to reduce battery consumption.
+PiPower V2は統合電源機能を有し、バッテリー消費を抑えるために自動で電源パスを切り替えます。
 
-* If an external power supply is connected, the 5V output is directly output from the external power supply, and the power switch can be used to turn it on or off. Additionally, the external power supply can charge the battery at low current.
-* When the external power supply is unplugged, PiPower switches to battery step-down power supply, seamless switching to protect the device.
+* 外部電源が接続されている場合、5V出力は外部電源から直接出力され、電源スイッチでオン/オフが可能です。さらに、外部電源で低電流でバッテリーを充電できます。
+* 外部電源が抜かれた場合、PiPowerはバッテリー降圧供給に切り替わり、デバイスを保護するためにシームレスに切り替えます。
 
+**充電電力**
 
-**Charging Power**
+電源スイッチの状態に応じて充電電流が切り替わります。
 
-Charging current will be switched according to the state of the power switch.
+* 電源スイッチがオフの場合、PiPowerは外部デバイスに電源を供給しません。この時点で、充電電力は7Wで、0%から100%まで充電するのに約2時間かかります。
+* 電源スイッチがオンの場合、外部電源は接続されたデバイスに直接電源を供給します。この時、充電電力は1W以下に減少して、電源供給電流を確保します。
 
-* PiPower does not provide power to external devices when the power switch is off. This time, the charging power is 7W, and it takes about 2 hours to charge from 0% to 100%.
-* External power supply will power the connected device directly when the power switch is on. Charging power is reduced to less than 1W to ensure power supply current.
+**過放電保護**
 
-**Over-discharge Protection**
+単一バッテリーの電圧が3.2V以下になると、バッテリー保護が作動し、バッテリーはこれ以上放電されません。
 
-When the single battery voltage is below 3.2V, the battery protection activates and the battery is no longer discharged.
+バッテリーが外れた場合、オンボードの過放電保護回路のメカニズムにより、電圧が低すぎると判断され、保護回路が作動します。この状態でPiPowerにバッテリーを再接続すると、バッテリーは正常に動作しないため、Type Cケーブルを充電ポートに接続して保護回路を解除し、バッテリーを正常に使用できるようにする必要があります。
 
-When the battery is unplugged, due to the mechanism of the on-board over-discharge protection circuit, the voltage will be considered too low, thus activating the protection circuit; when you replug the battery into the PiPower, the battery will not work properly, at this time, you need to plug the Type C cable into the charging port to turn off the protection circuit, and the battery can be used normally.
+**過充電保護**
 
-**Overcharge Protection**
+バッテリーの合計電圧が8.4Vに達した場合、充電が終了します。
 
-Charging ends when the total battery voltage reaches 8.4V.
+**充電バランス**
 
-**Charge Balance**
+単一バッテリーが4.2Vを超えた場合、電圧分割抵抗器チャンネルが導通し、バッテリーの充電電流が減少または放電されます。
 
-When a single battery exceeds 4.2V, the voltage divider resistor channel conducts and the battery charging current is reduced or even discharged. 
+**温度**
 
-**Temperature**
+出力電力が最大定格の5V/3Aに達すると、DC-DC降圧チップU1の温度は約70-80度Cに上昇するので、触らないように注意し、通気を確保してください。温度がDC-DCの保護温度である75度Cに達すると、DC-DCは過熱損傷を防ぐためにシャットダウンします。
 
-When the output power reaches the maximum nominal 5V/3A, the temperature of DC-DC buck chip U1 will rise to about 70-80 degrees Celsius, so be careful not to touch it to prevent burns and keep ventilation. When the temperature reaches the DC-DC protection temperature of 75 degrees Celsius, the DC-DC will shut down to prevent overheating damage.
-
-
-
-Battery Indicators
+バッテリーインジケーター
 --------------------------
 
-The relationship between the battery indicators and voltage is as follows:
+バッテリーインジケーターと電圧との関係は以下の通りです：
 
-* 4 LEDs all on: voltage > 7.8V
-* 3 LEDs on: voltage > 7.36V
-* 2 LEDs on: voltage >6.96V
-* 1 LED on: voltage > 6.6V
-* 4 LEDs all off: voltage <6.6V，at this time，batteries need to be charged.
+* 4つのLEDがすべて点灯：電圧 > 7.8V
+* 3つのLEDが点灯：電圧 > 7.36V
+* 2つのLEDが点灯：電圧 >6.96V
+* 1つのLEDが点灯：電圧 > 6.6V
+* 4つのLEDがすべて消灯：電圧 <6.6V、この時点で、バッテリーを充電する必要があります。
 
-
-
-External Battery
+外部バッテリー
 --------------------------
-
 
 .. image:: img/ex_btra.png
 
-You can connect your own battery using the Screw Terminal. 
+ネジ端子を使用して独自のバッテリーを接続できます。
 
-.. warning:: Do not connect the external battery and the included battery at the same time!
+.. warning:: 外部バッテリーと同梱のバッテリーを同時に接続しないでください！
 
-The external battery only supports two 3.7V lithium batteries connected in series. The interface has three pins: "+", "M", and "-". They should be connected to the battery's positive terminal, the middle of the two batteries, and the battery's negative terminal, respectively.
+外部バッテリーは、3.7Vのリチウムバッテリーを2つ直列接続したもののみをサポートします。インターフェイスには「+」「M」「-」の3つのピンがあります。それぞれ、バッテリーの正極、二つのバッテリーの中間、およびバッテリーの負極に接続する必要があります。
 
-The PiPower board has an onboard battery protection circuit, offering over-discharge, overcharge, and overcurrent protection. Therefore, it's recommended not to use batteries with their own protection boards.
+PiPowerボードにはオンボードのバッテリー保護回路があり、過放電、過充電、過電流保護を提供しています。そのため、独自の保護ボードを持つバッテリーを使用しないことが推奨されています。
 
-The 'M' interface primarily serves the board's protection circuit for single-cell battery protection and balanced charging currents during charging. If you don't require protection and balanced charging features, you can omit connecting to the 'M' interface.
+「M」インターフェイスは主に、単一セルバッテリー保護および充電中のバランス充電電流のためのボードの保護回路に使用されます。保護機能やバランス充電機能が不要な場合、この「M」インターフェイスに接続する必要はありません。
 
 .. image:: img/ex_btr.png
 
 
-About IO Pins
+IOピンについて
 -----------------
 
 .. image:: img/io_pin.png
     :width: 500
     :align: center
 
-In order to meet the DIY needs of customers, multiple signal pins are provided on the PiPower, but they are not soldered by default.
+PiPowerには、お客様のDIYニーズに応えるために複数の信号ピンが提供されていますが、デフォルトでははんだ付けされていません。
 
-* **GND**: Ground input
-* **BT_LV**: Get the battery voltage pin. The voltage of this pin is equal to 1/3 of the battery voltage.
-* **IN_DT**: Input detect pin. Used to determine if there is USB power input, if so, this pin outputs high.
-* **CHG**: Charging status indication pin. This pin is high when charging.
-* **LO_DT**: Battery low voltage status pin. In normal state, this pin is low. When low battery voltage is detected, this pin is high.
-* **EN:** Switch signal pin. the EN pin can be connected to an external switch, put the pin to ground, the PiPower is off. The external switch can not use self-recovery button or key, etc. The EN pin is only effective when the on-board switch is turned on.
-* **GND**: Ground input
-* **LED**: Power indicator pin. Output 5V at power on, need to add current limiting resistor in the middle when connect an external LED.
-* **GND**: Ground input
+* **GND**: アース入力
+* **BT_LV**: バッテリー電圧取得ピン。このピンの電圧は、バッテリー電圧の1/3に等しい。
+* **IN_DT**: 入力検出ピン。USB電源入力があるかどうかを判断するために使用され、存在する場合、このピンは高電圧を出力する。
+* **CHG**: 充電状態指示ピン。このピンは充電中に高い。
+* **LO_DT**: バッテリー低電圧状態ピン。通常状態では、このピンは低い。低電圧が検出された場合、このピンは高い。
+* **EN**: スイッチ信号ピン。ENピンは外部スイッチに接続可能で、このピンを接地すると、PiPowerがオフになります。外部スイッチは自己回復ボタンやキーなどを使用できません。ENピンは、オンボードスイッチがオンのときのみ有効です。
+* **GND**: アース入力
+* **LED**: 電源インジケーターピン。電源投入時に5Vを出力する。外部LEDを接続する際は、間に電流制限抵抗を追加する必要があります。
+* **GND**: アース入力
 
-About Battery
+バッテリーについて
 ----------------------
-
 
 .. image:: img/2battery.jpg
     :width: 300
     :align: center
 
-* **VCC**: Battery positive terminal, here there are two sets of VCC and GND is to increase the current and reduce the resistance.
-* **Middle**: To balance the voltage between the two cells and thus protect the battery.
-* **GND**: Negative battery terminal.
+* **VCC**: バッテリー正極。こちらにはVCCとGNDの2セットがあり、電流を増加させて抵抗を減らすためです。
+* **Middle**: 二つのセル間の電圧をバランスさせ、バッテリーを保護します。
+* **GND**: バッテリー負極。
+
+このバッテリーパックは、SunFounderによってカスタム製造されたもので、3.7V 18650バッテリーを2つ含んでおり、容量は2200mAhです。コネクタはPH2.0-5Pで、PiPowerに挿入した後、直接充電できます。
 
 
-This is a custom battery pack made by SunFounder consisting of two 3.7V 18650 batteries with a capacity of 2200mAh. The connector is PH2.0-5P, which can be charged directly after being inserted into the PiPower.

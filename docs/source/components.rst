@@ -1,4 +1,4 @@
-Component List
+部品リスト
 ===============
 
 .. image:: img/media3.png

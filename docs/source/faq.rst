@@ -1,13 +1,12 @@
-FAQ
-==============
+FAQ（よくある質問）
+====================
 
-PiPower not working?
+PiPowerが動作しない？
 ---------------------------
 
-When you put the battery in for the first time or when the battery is unplugged and put in again, the battery will not work properly.
+初めてバッテリーをセットした場合や、バッテリーを一度外して再度セットした場合、バッテリーが正常に動作しないことがあります。
 
+これは、バッテリーが取り外された際、オンボードの過放電保護回路の仕組みにより、電圧が低すぎると判断され、保護回路が作動するからです。
 
-This is because when the battery is removed, due to the mechanism of the on-board over-discharge protection circuit, the voltage will be considered too low, thus activating the protection circuit; 
+この状態では、保護回路を解除するために **Type C** ケーブルを充電ポートに接続する必要があります。それを行うと、バッテリーは正常に使用できるようになります。
 
-
-At this time, you need to plug the **Type C** cable into the charging port to release the protection circuit, and the battery can be used normally.

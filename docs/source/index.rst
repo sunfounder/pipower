@@ -1,26 +1,27 @@
-PiPower - Raspberry Pi UPS with Battery
+PiPower - Raspberry Pi用のUPSバッテリー
 =============================================
 
 .. image:: img/media1.png
     :width: 600
 
-**What a UPS Does?**
+**UPSが何をするのか？**
 
-If your Raspberry Pi project requires constant power, relying only on the main power system is not a viable option. Depending on your location, power drops and surges may occur frequently and often last for hours. Any power fluctuations can damage your Raspberry Pi, and a power outage will immediately shut it down. Consequently, it will not shut down safely, which can result in all data on the SD card being lost, increasing the chances of it being destroyed.
+Raspberry Piプロジェクトで安定した電力供給が必要な場合、主電源だけに頼るのはリスキーです。地域によっては、電力の落ちや急激な電圧変動が頻繁に発生し、数時間続くこともあります。このような電力の不安定性はRaspberry Piに損傷を与える可能性があり、停電が発生すると即座にシャットダウンします。その結果、安全なシャットダウンができず、SDカード上のデータが全て失われ、壊れる可能性が高まります。
 
-Therefore, the use of an uninterruptible power supply (UPS) is recommended.
+そのため、無停電電源装置（UPS）の使用が推奨されます。
 
-With a UPS, if there is a power interruption from the mains (interruption = power outage), the battery or other power source will take over and continue to power the device without shutting it down. A UPS is often considered an emergency power source. After the main power source is repaired, the UPS will recharge and be ready to handle the next disaster.
+UPSを利用すれば、主電源からの供給が途絶えた場合（停電など）、バッテリーや他の電源が代わりになり、デバイスをシャットダウンすることなく継続して動作させます。UPSは一般に非常用電源とされています。主電源が復旧した後、UPSは再び充電して次の非常事態に備えます。
 
-**About PiPower**
+**PiPowerについて**
 
-That's why we designed PiPower in the first place. PiPower can be used as a second power source for the Raspberry Pi. A USB-C mains power supply plugged into the PiPower will directly power the Raspberry Pi and charge the battery at low current. PiPower can seamlessly power up a Raspberry Pi in the event of a power outage or disconnection of USB-C mains power.
+このような背景から、PiPowerは最初から設計されました。PiPowerはRaspberry Piのセカンダリ電源として使用できます。USB-Cの主電源アダプタをPiPowerに接続すると、Raspberry Piは直接電源供給を受け、同時に低電流でバッテリーも充電されます。PiPowerは、停電やUSB-C主電源の切断が発生した際にも、Raspberry Piに途切れることなく電力を供給します。
 
-PiPower can output 5V/3A power supply to meet various Raspberry Pi usage situation. 
-It has 4 power indicators; each indicator represents 25% of the power, and is equipped with a power switch to turn on/off the power of the Raspberry Pi without plugging or unplugging the power cord.
+PiPowerは、5V/3Aの電源を出力でき、様々なRaspberry Piの使用状況に対応します。
+電源インジケーターが4つあり、各インジケーターは電力の25%を表示します。また、電源コードを抜き差しすることなくRaspberry Piの電源をオン/オフできる電源スイッチも装備しています。
 
 .. warning::
-    When you put the battery in for the first time or when the battery is unplugged and put in again, the battery will not work properly, at this time, you need to plug the Type C cable into the charging port to turn off the protection circuit, and the battery can be used normally.
+    バッテリーを初めて装着する場合や、バッテリーを外して再度装着した場合、正常に動作しない可能性があります。このような場合、Type Cケーブルを充電ポートに接続して保護回路を解除し、バッテリーを正常に使用できるようにしてください。
+
 
 
 

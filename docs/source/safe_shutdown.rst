@@ -1,36 +1,32 @@
-Safe Shutdown for Raspberry Pi using PiPower
-=============================================
+PiPowerを使ってRaspberry Piの安全なシャットダウンを実現
+=======================================================
 
-The PiPower board provides several expansion pins that can be leveraged to 
-enable functionalities like a safe shutdown for Raspberry Pi. 
-Here's a detailed breakdown of these pins and their functions.
+PiPowerボードには、Raspberry Piの安全なシャットダウンなどの機能を有効化するために利用できるいくつかの拡張ピンが装備されています。
+以下は、これらのピンとその機能に関する詳細な説明です。
 
 .. image:: img/io_pin.png
    :width: 500
    :align: center
 
-* **GND**: Ground connection.
-* **BT_LV**: Indicates the battery voltage, which is 1/3 of the actual battery voltage.
-* **IN_DT**: Helps determine if USB power is connected. Outputs high when USB power is detected.
-* **CHG**: Signals when the device is charging.
-* **LO_DT**: Signifies low battery voltage status. Outputs high when low battery is detected.
-* **EN**: Serves as a switch signal. When connected to an external switch and grounded, it turns off the PiPower. This is effective only when the on-board switch is active.
-* **LED**: Provides power indication. Outputs 5V when powered on. When connecting an external LED, a current limiting resistor is necessary.
+* **GND**: アース接続。
+* **BT_LV**: バッテリー電圧を示し、実際のバッテリー電圧の1/3です。
+* **IN_DT**: USB電源が接続されているかどうかを判断します。USB電源が検出されると高出力します。
+* **CHG**: デバイスが充電中であることを示します。
+* **LO_DT**: バッテリーの低電圧状態を示します。低電圧が検出された場合、高出力します。
+* **EN**: スイッチ信号として機能します。外部スイッチに接続し、接地するとPiPowerがオフになります。これは、オンボードスイッチがアクティブな場合のみ有効です。
+* **LED**: 電源状態を示します。電源がオンの場合、5Vを出力します。外部LEDを接続する場合、電流制限抵抗が必要です。
 
-.. note:: These pins are not soldered. You'll need to solder them using a soldering iron.
+.. note:: これらのピンははんだ付けされていません。はんだごてではんだ付けする必要があります。
 
-For this project, 
-we'll be focusing on the **IN_DT**, **CHG**, and **LO_DT** pins to 
-determine if an external battery is present, 
-if the USB charging cable is plugged in, and if the battery is low. 
-This ensures the Raspberry Pi shuts down safely when the battery level is low.
+このプロジェクトでは、 **IN_DT** 、 **CHG** 、および **LO_DT** ピンに焦点を当て、
+外部バッテリーが存在するか、USB充電ケーブルが接続されているか、バッテリーが低いかを判断します。
+これにより、バッテリーのレベルが低い場合、Raspberry Piは安全にシャットダウンします。
 
-.. warning:: Do not plug in both the external battery and the included battery simultaneously!
+.. warning:: 外部バッテリーと内蔵バッテリーを同時に接続しないでください！
 
-**Wiring**
+**配線**
 
-This table showcases how the PiPower 
-should be connected to the Raspberry Pi:
+このテーブルは、PiPowerがRaspberry Piにどのように接続されるべきかを示しています：
 
 .. list-table:: 
     :widths: 50 50
@@ -47,71 +43,65 @@ should be connected to the Raspberry Pi:
     * - GND
       - GND
 
-**Download and Test**
+**ダウンロードとテスト**
 
-Sample code for the safe shutdown is provided:
+安全なシャットダウンのためのサンプルコードが提供されています：
 
-1. Download from `PiPower Github <https://github.com/sunfounder/pipower.git>`_ or clone using:
+1. `PiPower Github <https://github.com/sunfounder/pipower.git>`_ からダウンロードするか、以下のようにクローンします。
 
     .. code-block::
 
         git clone https://github.com/sunfounder/pipower.git
 
-2. Navigate to the examples directory:
+2. examplesディレクトリに移動します。
 
     .. code-block::
 
         cd pipower/examples
 
-3. Run the test program to verify the Raspberry Pi can read the power states correctly:
+3. Raspberry Piが電源状態を正確に読み取れるか確認するためにテストプログラムを実行します。
 
     .. code-block::
 
         python3 read_all.py
 
-You can simulate different power states by unplugging the USB cable, 
-removing the battery, 
-or altering the Raspberry Pi's pin connections. 
-The printed messages will indicate the power state. 
-For instance, if the power is supplied only by the battery, 
-the following message will be displayed:
+USBケーブルを抜く、バッテリーを取り外す、またはRaspberry Piのピン接続を変更することで、異なる電源状態をシミュレートできます。
+表示されるメッセージで電源状態がわかります。
+例えば、電源がバッテリーのみから供給されている場合、以下のメッセージが表示されます：
 
     .. code-block::
 
-        External power disconnected
-        Not charging
-        Battery OK
+        外部電源が切断されました
+        充電されていません
+        バッテリー正常
 
-.. warning:: Never connect both the external battery and the built-in battery at once!
+.. warning:: 外部バッテリーと内蔵バッテリーを同時に接続しないでください！
 
-**Setup Safe Shutdown**
+**安全なシャットダウンの設定**
 
-To enable the safe shutdown functionality:
+安全なシャットダウン機能を有効にするには：
 
-1. In the ``pipower/examples`` directory, execute:
+1. ``pipower/examples`` ディレクトリで以下を実行します：
 
     .. code-block::
 
         sudo bash enable_safe_shutdown.sh
 
-2. Restart the Raspberry Pi:
+2. Raspberry Piを再起動します：
 
     .. code-block::
 
         sudo reboot
 
-With this setup, your Raspberry Pi will shut down automatically 
-in cases of not charging or low battery.
+この設定により、充電していない場合やバッテリーが低い場合、Raspberry Piは自動的にシャットダウンします。
 
-**Advanced Configurations**
+**高度な設定**
 
-For those looking for more customization, 
-you can add further actions in ``safe_shutdown.py``. 
-Insert any necessary code under ``# Do some stuff before shutting down`` to 
-execute specific actions before shutting down, 
-such as sending a notification to your phone or shutting down certain services. 
+さらなるカスタマイズを希望する方は、 ``safe_shutdown.py`` に追加のアクションを追加できます。
+``# シャットダウン前に実行する操作`` の下に、シャットダウンする前に特定の操作を実行するための任意のコードを挿入します。
+たとえば、スマートフォンに通知を送ったり、特定のサービスをシャットダウンしたりします。
 
-Remember to run ``enable_safe_shutdown.sh`` if you make changes to ``safe_shutdown.py``.
+``safe_shutdown.py`` を変更した場合、 ``enable_safe_shutdown.sh`` を再実行してください。
 
     .. code-block::
 
