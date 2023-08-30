@@ -22,7 +22,16 @@ It has 4 power indicators; each indicator represents 25% of the power, and is eq
 .. warning::
     When you put the battery in for the first time or when the battery is unplugged and put in again, the battery will not work properly, at this time, you need to plug the Type C cable into the charging port to turn off the protection circuit, and the battery can be used normally.
 
+**About the display language**
 
+This document is available in other languages as well. To switch the display language, kindly click on the **Read the Docs** icon located in the lower left corner of the page.
+
+.. image:: img/translation.png
+       :align: center
+
+.. raw:: html
+
+   <br/>
 
 
 .. toctree::
