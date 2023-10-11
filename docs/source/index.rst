@@ -1,6 +1,17 @@
 PiPower - Raspberry Pi USV mit Batterie
 =============================================
 
+Danke, dass Sie sich für unser PiPower entschieden haben.
+
+.. note::
+    Dieses Dokument ist in den folgenden Sprachen verfügbar.
+
+        * |link_german_tutorials|
+        * |link_jp_tutorials|
+        * |link_en_tutorials|
+    
+    Bitte klicken Sie auf die jeweiligen Links, um das Dokument in Ihrer bevorzugten Sprache aufzurufen.
+
 .. image:: img/media1.png
     :width: 600
 
