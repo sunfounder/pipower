@@ -60,6 +60,15 @@ html_css_files = [
 
 #### RTD+
 
+html_js_files = [
+    'https://ezblock.cc/readDocFile/custom.js',
+    './lang.js', # new
+]
+html_css_files = [
+    'https://ezblock.cc/readDocFile/custom.css',
+]
+
+
 #html_js_files = [
 #    'https://ezblock.cc/readDocFile/custom.js',
 #   'https://ezblock.cc/readDocFile/readTheDoc/src/js/ace.js',
@@ -87,3 +96,29 @@ language = 'en' # Before running make html, set the language.
 locale_dirs = ['locale/'] # .po files for other languages are placed in the locale/ folder.
 
 gettext_compact = False # Support for generating the contents of the folders inside source/ into other languages.
+
+
+
+
+# links
+
+rst_epilog = """
+
+.. |link_german_tutorials| raw:: html
+
+    <a href="https://docs.sunfounder.com/projects/pipower-v2/de/latest/" target="_blank">Deutsch Online-Kurs</a>
+
+.. |link_jp_tutorials| raw:: html
+
+    <a href="https://docs.sunfounder.com/projects/pipower-v2/ja/latest/" target="_blank">日本語オンライン教材</a>
+
+.. |link_en_tutorials| raw:: html
+
+    <a href="https://docs.sunfounder.com/projects/pipower-v2/en/latest/" target="_blank">English Online-tutorials</a>
+
+
+
+"""
+
+
+
